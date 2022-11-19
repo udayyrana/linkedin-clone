@@ -6,10 +6,8 @@ function Search() {
     <div className="search">
       <img className="navLogo" src="/images/home-logo.svg" alt="" />
       <div className="searchInputLogo">
-          <input className="inputSearch" placeholder="Search" />
-        <div className="navSearchLogo">
-          <img src="/images/search-icon.svg" alt="" />
-        </div>
+        <input className="inputSearch" placeholder="Search" />
+        <img className="navSearchLogo" src="/images/search-icon.svg" alt="" />
       </div>
     </div>
   );
