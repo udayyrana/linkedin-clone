@@ -1,14 +1,11 @@
 import React from "react";
-// import NavIcons from './NavIcons'
 import "./NavList.css";
 import styled from "styled-components";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import SmsIcon from "@mui/icons-material/Sms";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import AppsIcon from '@mui/icons-material/Apps';
-import { style } from "@mui/system";
 
 function NavList() {
   return (
@@ -50,15 +47,15 @@ function NavList() {
 export default NavList;
 
 const NavIcons = styled.span`
-  padding: 0 12px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  padding: 6px 10px;
-  margin-right: 2px;
+  padding: 6px 14px;
+  margin-right: 12px;
   color: rgba(0, 0, 0, 0.6);
+
 
   & > span {
     font-size: 12px;
