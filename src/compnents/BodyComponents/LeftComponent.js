@@ -1,0 +1,134 @@
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import React from "react";
+import styled from "styled-components";
+import "./LeftComponent.css";
+
+function LeftComponent() {
+  return (
+    <>
+      <div className="left">
+        <Profile>
+          <BackGround />
+          <img src="/images/user.svg" alt="" />
+          <h4>Username</h4>
+          <p>Fresher</p>
+        </Profile>
+        <HorizontalLine />
+        <ProfileStats>
+          <p>Who's viewed your profile</p>
+          <StatsViewNo>
+            <a>52</a>
+          </StatsViewNo>
+        </ProfileStats>
+        <ProfileStats>
+          <p>
+            Connections <br />
+            <strong> Manage your network</strong>
+          </p>
+          <StatsViewNo>
+            <a>757</a>
+          </StatsViewNo>
+        </ProfileStats>
+        <HorizontalLine />
+        <ProfileStats>
+          <Subscribe>
+            <p>Access exclusive tools & insights</p>
+          </Subscribe>
+        </ProfileStats>
+        <HorizontalLine />
+        <MyItems>
+          <BookmarkIcon /> <p> My Items </p>
+        </MyItems>
+      </div>
+    </>
+  );
+}
+
+export default LeftComponent;
+
+const Profile = styled.div`
+  text-align: center;
+  position: relative;
+  & > img {
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 60px;
+    margin: 20px;
+    z-index: 10;
+    position: relative;
+  }
+  & > h4 {
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  & > p {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 12px;
+  }
+`;
+
+const BackGround = styled.div`
+  background-color: #a0b4b7;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+
+  width: 100%;
+  padding: 27px 0;
+  position: absolute;
+  z-index: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+`;
+
+const HorizontalLine = styled.div`
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+`;
+
+const StatsViewNo = styled.a`
+  color: blue;
+  font-size: 12px;
+  text-align: right;
+`;
+
+const ProfileStats = styled.div`
+  color: rgba(0, 0, 0, 0.6);
+  padding: 6px 14px;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 135px 20px;
+  justify-content: space-between;
+  & > p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+  }
+`;
+
+const Subscribe = styled.div`
+  margin: 12px 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.2;
+`;
+
+const MyItems = styled.div`
+  padding: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  & > p {
+    margin-left: 6px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    cursor: pointer;
+  }
+`;

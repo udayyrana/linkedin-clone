@@ -1,0 +1,29 @@
+.navIcons{
+    display: flex;
+}
+
+.active{
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+.user{
+    border-radius: 50%;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.userMe{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.dropDown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
