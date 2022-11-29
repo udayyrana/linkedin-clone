@@ -1,0 +1,159 @@
+.post{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 8px;
+}
+
+.userPost{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.postInput{
+    flex: 1;
+    border-radius: 50px;
+    padding-left: 14px;
+    border:1px solid rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    background-color: white;
+    text-align: left;
+}
+
+.postInput:hover{
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.inputButtons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputButtons > button{
+    border: none;
+    background-color: transparent;
+    margin-top: 16px;
+    padding: 12px 10px;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.inputButtons > button:hover{
+    background-color: rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+button>span{
+    margin-left: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.photoBtn{
+    color:#378fe9;
+}
+
+.videoBtn{
+    color: #5f9b41;
+}
+
+.eventBtn{
+    color:#ce9643;
+}
+
+.articleBtn{
+    color: #e16745;
+}
+
+.modalPost{
+    display: flex;
+    gap: 10px;
+    align-content: center;
+    padding: 2px;
+}
+#modal-modal-title{
+    font-size: 20px;
+}
+
+.modalPost>div{
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+}
+.modalPost>div>p{
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+
+.modalPost>div>button{
+    border-radius: 50px;
+    padding: 4px 10px;
+    width: 100px;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    letter-spacing: -0.4px;
+    text-align: left;
+    border: 0.5px solid rgba(0, 0, 0, 0.6);
+}
+
+.modalInput{
+    height: 100px;
+    margin-top: 12px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 500px;
+}
+
+.modalInput:hover, .modalInput:focus, .modalInput:active{
+    border: none;
+    outline: none;
+}
+
+.modalPostButton{
+    padding: 8px 12px;
+    border-radius: 50px;
+    background-color: #2f7fd0;
+    border: none;
+    font-weight: 600;
+    color: white;
+}
+
+.modalPostBtns{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modalBtn{
+    color: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+.modalBtn:hover{
+    background-color: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.modalPostBtn{
+    display: flex;
+    justify-content: space-between;
+}

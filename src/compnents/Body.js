@@ -1,6 +1,6 @@
 import React from 'react';
 import LeftComponent from './BodyComponents/LeftComponent';
-import MiddleComponent from './BodyComponents/MiddleComponent';
+import MiddleComponent from './BodyComponents/MiddleComponent/MiddleComponent';
 import RightComponent from './BodyComponents/RightComponent';
 import './Body.css'
 

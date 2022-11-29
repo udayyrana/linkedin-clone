@@ -1,5 +1,7 @@
 .left{
     background-color: white;
-    border-radius: 16px;
-    border: 1px solid rgb(235, 235, 235);
+    border-radius: 10px;
+    /* border: 1px solid rgb(235, 235, 235); */
+    height: fit-content;
+    box-shadow: 0 0 1px 1px rgb(219, 219, 219);
 }

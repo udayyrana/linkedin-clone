@@ -1,0 +1,35 @@
+
+.postComp{
+    padding: 8px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px rgb(219, 219, 219);
+
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.feedComp{
+    padding: 20px 0 4px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px rgb(219, 219, 219);
+
+    background-color: white;
+    height: fit-content;
+    margin-bottom: 12px;
+}
+
+.sortBy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+.sortBy:hover{
+    cursor: pointer;
+}
+
+.sortBy > span{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    font-weight: 200;
+}

@@ -3,10 +3,13 @@
     padding: 0;
 }
 
+
 body{
     overflow-y: scroll;
     /* overflow-x: hidden; */
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+
+    /* font-family: Arial, sans-serif; */
   }
   
   :root, body, html{

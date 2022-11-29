@@ -10,17 +10,22 @@ function LeftComponent() {
         <Profile>
           <BackGround />
           <img src="/images/user.svg" alt="" />
-          <h4>Username</h4>
-          <p>Fresher</p>
+          <a>
+            <h4>Username</h4>
+          </a>
+          <p>Headline</p>
         </Profile>
         <HorizontalLine />
-        <ProfileStats>
-          <p>Who's viewed your profile</p>
+        <ProfileStats style={{ marginTop: "10px" }}>
+          <p>
+            Who's viewed your <br />
+            profile
+          </p>
           <StatsViewNo>
             <a>52</a>
           </StatsViewNo>
         </ProfileStats>
-        <ProfileStats>
+        <ProfileStats style={{ marginBottom: "10px" }}>
           <p>
             Connections <br />
             <strong> Manage your network</strong>
@@ -51,20 +56,29 @@ const Profile = styled.div`
   position: relative;
   & > img {
     border-radius: 50%;
-    border: 1px solid white;
+    border: 2px solid white;
     width: 60px;
     margin: 20px;
     z-index: 10;
     position: relative;
   }
-  & > h4 {
-    font-weight: 400;
-    margin-bottom: 8px;
+  & > a {
+    :hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    color: rgba(0, 0, 0, 0.8);
+    & > h4 {
+      font-weight: 500;
+      letter-spacing: 0.7px;
+      margin-bottom: 8px;
+    }
   }
   & > p {
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.4);
     margin-bottom: 12px;
+    font-weight: 500;
   }
 `;
 
@@ -76,24 +90,24 @@ const BackGround = styled.div`
   padding: 27px 0;
   position: absolute;
   z-index: 0;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 const HorizontalLine = styled.div`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 `;
 
-const StatsViewNo = styled.a`
+const StatsViewNo = styled.div`
   color: blue;
   font-size: 12px;
+  margin-top: 1px;
   text-align: right;
 `;
 
 const ProfileStats = styled.div`
   color: rgba(0, 0, 0, 0.6);
   padding: 6px 14px;
-  margin: 10px 0;
   display: grid;
   grid-template-columns: 135px 20px;
   justify-content: space-between;
@@ -118,6 +132,7 @@ const MyItems = styled.div`
   padding: 14px;
   color: rgba(0, 0, 0, 0.6);
   font-size: 12px;
+  font-weight: 500;
   display: flex;
   align-items: center;
 

@@ -69,5 +69,5 @@ const NavIcons = styled.span`
 `;
 
 const Line = styled.div`
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
 `;
