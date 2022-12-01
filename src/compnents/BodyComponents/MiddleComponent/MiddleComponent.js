@@ -15,7 +15,7 @@ const startingFeeds = [
     time: new Date().toLocaleTimeString(),
     userContent: "Hey",
     image: "",
-    video: "https://www.youtube.com/embed/q_S9BMvfHAc",
+    // video: "https://www.youtube.com/embed/q_S9BMvfHAc",
     likeCount: 157,
   },
   {
@@ -55,7 +55,7 @@ const startingFeeds = [
 function MiddleComponent() {
   const [feeds, setFeeds] = useState(startingFeeds);
 
-  function handleFeed(inputValue, imageURL) {
+  function handleFeed(inputValue, imageURL, videoURL) {
     setFeeds(function (prevValue) {
       const userInp = {
         id: uuidv4(),
@@ -64,7 +64,7 @@ function MiddleComponent() {
         userimage: "images/user.svg",
         userContent: inputValue,
         time: new Date().toLocaleTimeString(),
-        video:"",
+        video:videoURL,
         image: imageURL,
         likeCount: 0,
       };

@@ -24,18 +24,25 @@ function PostComponent(props) {
   const [inputState, setInputState] = useState("");
   const [imageState, setImageState] = useState(false);
   const [imageURLState, setImageURLState] = useState("");
+  const [videoState, setVideoState] = useState(false);
   const [videoURLState, setVideoURLState] = useState("");
 
   const handleImage = (event) =>{
     setImageURLState(event.target.value);
   }
+  const handleVideo = (event) =>{
+    setVideoURLState(event.target.value);
+  }
   
   function handleSubmit(event) {
     event.preventDefault();
-    if (inputState.length !== 0 || imageURLState.length!==0) {
-      props.handleFeed(inputState, imageURLState);
+    if (inputState.length !== 0 || imageURLState.length!==0 || videoURLState.length!==0) {
+      props.handleFeed(inputState, imageURLState, videoURLState);
       setInputState("");
+      setImageState(false);
+      setVideoState(false);
       setImageURLState("");
+      setVideoURLState("");
       setOpen(false);
     }
   }
@@ -44,12 +51,23 @@ function PostComponent(props) {
     setInputState(event.target.value);
   }
   
-  const handleOpen = () => setOpen(true);
+  const handleOpen = (arg) => {
+    setOpen(true);
+    if(arg==="image"){
+      setImageState(true);
+    }
+    if(arg==="video"){
+      setVideoState(true);
+    }
+  };
   const handleClose = () => {setOpen(false)
     setInputState("");
     setImageState(false);
     setImageURLState("");
+    setVideoState(false);
+    setVideoURLState("");
   };
+
   return (
     <>
       <Modal
@@ -82,16 +100,11 @@ function PostComponent(props) {
               <div className="modalPostBtns">
                 <a className="modalBtn">
                   <InsertPhotoIcon onClick={()=>{!imageState?setImageState(true):setImageState(false)}}/>
-                  {imageState == true && <input type="text" value={imageURLState} onChange={handleImage} placeholder="Enter your image URL here"/>}
+                  {imageState && <input autoFocus type="text" value={imageURLState} onChange={handleImage} placeholder="Enter image URL" />}
                 </a>
                 <a className="modalBtn">
-                  <YouTubeIcon />
-                </a>
-                <a className="modalBtn">
-                  <EventIcon />
-                </a>
-                <a className="modalBtn">
-                  <NewspaperIcon />
+                  <YouTubeIcon onClick={()=>{!videoState?setVideoState(true):setVideoState(false)}}/>
+                  {videoState && <input autoFocus type="text" value={videoURLState} onChange={handleVideo} placeholder="Enter youtube video URL"/>}
                 </a>
               </div>
               <button type="submit" className="modalPostButton">
@@ -103,23 +116,23 @@ function PostComponent(props) {
       </Modal>
       <div className="post">
         <img className="userPost" src="/images/user.svg" alt="" />
-        <a id="myBtn" className="postInput" onClick={handleOpen}>
+        <a id="myBtn" className="postInput" onClick={()=>{handleOpen("input")}}>
           Start a post
         </a>
       </div>
       <div className="inputButtons">
-        <button className="photoBtn">
+        <button className="photoBtn" onClick={()=>{handleOpen("image")}}>
           <InsertPhotoIcon />
           <span>Photo</span>
         </button>
-        <button className="videoBtn">
+        <button className="videoBtn" onClick={()=>{handleOpen("video")}}>
           <YouTubeIcon /> <span>Video</span>
         </button>
-        <button className="eventBtn">
+        <button className="eventBtn" onClick={handleOpen}>
           <EventIcon />
           <span>Event</span>
         </button>
-        <button className="articleBtn">
+        <button className="articleBtn" onClick={handleOpen}>
           <NewspaperIcon /> <span>Write Article</span>
         </button>
       </div>
