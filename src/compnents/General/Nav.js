@@ -1,6 +1,6 @@
 import React from "react";
-import NavList from "./NavComponents/NavList";
-import Search from "./NavComponents/Search";
+import NavList from "../NavComponents/NavList";
+import Search from "../NavComponents/Search";
 import "./Nav.css";
 
 const Nav = () => {

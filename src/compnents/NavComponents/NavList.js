@@ -6,8 +6,10 @@ import SmsIcon from "@mui/icons-material/Sms";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AppsIcon from '@mui/icons-material/Apps';
+import { Link } from "react-router-dom";
 
 function NavList() {
+  const profileName = 'profile-2';
   return (
     <div className="navIcons">
       <NavIcons className="active">
@@ -31,13 +33,15 @@ function NavList() {
         <span>Notifications</span>
       </NavIcons>
       <NavIcons>
+        <Link to={`/profile/${profileName}`}>
           <img className="user" src="/images/user.svg" alt="" />
           <span>Me</span>
+        </Link>
       </NavIcons>
-      <Line/>
+      <Line />
       <NavIcons>
-          <AppsIcon/>
-          <span>Work</span>
+        <AppsIcon />
+        <span>Work</span>
       </NavIcons>
 
     </div>
