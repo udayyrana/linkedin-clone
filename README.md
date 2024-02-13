@@ -1,3 +1,6 @@
+# Project Highlight (Check the video to get understanding)
+(https://github.com/udayyrana/linkedin-clone/blob/main/Linkedin-clone.mp4)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
