@@ -2,18 +2,21 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import React from "react";
 import styled from "styled-components";
 import "./LeftComponent.css";
+import { useSelector } from "react-redux";
 
 function LeftComponent() {
+  const user = useSelector((store) => store.user.data);
+  const { name, headline, profilePic, whoViewed, totalConnections } = user;
   return (
     <>
       <div className="left">
         <Profile>
           <BackGround />
-          <img src="/images/user.svg" alt="" />
+          <img src={profilePic} alt="" />
           <a>
-            <h4>Username</h4>
+            <h4>{name}</h4>
           </a>
-          <p>Headline</p>
+          <p>{headline}</p>
         </Profile>
         <HorizontalLine />
         <ProfileStats style={{ marginTop: "10px" }}>
@@ -22,7 +25,7 @@ function LeftComponent() {
             profile
           </p>
           <StatsViewNo>
-            <a>52</a>
+            <a>{whoViewed}</a>
           </StatsViewNo>
         </ProfileStats>
         <ProfileStats style={{ marginBottom: "10px" }}>
@@ -31,7 +34,7 @@ function LeftComponent() {
             <strong> Manage your network</strong>
           </p>
           <StatsViewNo>
-            <a>757</a>
+            <a>{totalConnections}</a>
           </StatsViewNo>
         </ProfileStats>
         <HorizontalLine />
@@ -63,7 +66,7 @@ const Profile = styled.div`
     position: relative;
   }
   & > a {
-    :hover{
+    :hover {
       cursor: pointer;
       text-decoration: underline;
     }

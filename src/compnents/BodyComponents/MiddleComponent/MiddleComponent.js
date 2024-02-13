@@ -5,6 +5,7 @@ import PostComponent from "./PostComponent";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const startingFeeds = [
   {
@@ -54,17 +55,20 @@ const startingFeeds = [
 
 function MiddleComponent() {
   const [feeds, setFeeds] = useState(startingFeeds);
+  const { name, headline, profilePic } = useSelector(
+    (store) => store.user.data
+  );
 
   function handleFeed(inputValue, imageURL, videoURL) {
     setFeeds(function (prevValue) {
       const userInp = {
         id: uuidv4(),
-        username: "UserName",
-        headline: "Headline",
-        userimage: "images/user.svg",
+        username: name,
+        headline: headline,
+        userimage: profilePic,
         userContent: inputValue,
         time: new Date().toLocaleTimeString(),
-        video:videoURL,
+        video: videoURL,
         image: imageURL,
         likeCount: 0,
       };

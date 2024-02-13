@@ -7,6 +7,7 @@ import NewspaperIcon from "@mui/icons-material/Newspaper";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const style = {
   position: "absolute",
@@ -27,16 +28,20 @@ function PostComponent(props) {
   const [videoState, setVideoState] = useState(false);
   const [videoURLState, setVideoURLState] = useState("");
 
-  const handleImage = (event) =>{
+  const handleImage = (event) => {
     setImageURLState(event.target.value);
-  }
-  const handleVideo = (event) =>{
+  };
+  const handleVideo = (event) => {
     setVideoURLState(event.target.value);
-  }
-  
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
-    if (inputState.length !== 0 || imageURLState.length!==0 || videoURLState.length!==0) {
+    if (
+      inputState.length !== 0 ||
+      imageURLState.length !== 0 ||
+      videoURLState.length !== 0
+    ) {
       props.handleFeed(inputState, imageURLState, videoURLState);
       setInputState("");
       setImageState(false);
@@ -46,21 +51,22 @@ function PostComponent(props) {
       setOpen(false);
     }
   }
-  
+
   function handleInputState(event) {
     setInputState(event.target.value);
   }
-  
+
   const handleOpen = (arg) => {
     setOpen(true);
-    if(arg==="image"){
+    if (arg === "image") {
       setImageState(true);
     }
-    if(arg==="video"){
+    if (arg === "video") {
       setVideoState(true);
     }
   };
-  const handleClose = () => {setOpen(false)
+  const handleClose = () => {
+    setOpen(false);
     setInputState("");
     setImageState(false);
     setImageURLState("");
@@ -68,6 +74,7 @@ function PostComponent(props) {
     setVideoURLState("");
   };
 
+  const { name, profilePic } = useSelector((store) => store.user.data);
   return (
     <>
       <Modal
@@ -81,9 +88,9 @@ function PostComponent(props) {
             <p id="modal-modal-title">Create a post</p>
             <br />
             <div className="modalPost">
-              <img className="userPost" src="/images/user.svg" alt="" />
+              <img className="userPost" src={profilePic} alt="" />
               <div>
-                <p>Username</p>
+                <p>{name}</p>
                 <button>🌎 Anyone</button>
               </div>
             </div>
@@ -99,12 +106,36 @@ function PostComponent(props) {
             <div className="modalPostBtn">
               <div className="modalPostBtns">
                 <a className="modalBtn">
-                  <InsertPhotoIcon onClick={()=>{!imageState?setImageState(true):setImageState(false)}}/>
-                  {imageState && <input autoFocus type="text" value={imageURLState} onChange={handleImage} placeholder="Enter image URL" />}
+                  <InsertPhotoIcon
+                    onClick={() => {
+                      !imageState ? setImageState(true) : setImageState(false);
+                    }}
+                  />
+                  {imageState && (
+                    <input
+                      autoFocus
+                      type="text"
+                      value={imageURLState}
+                      onChange={handleImage}
+                      placeholder="Enter image URL"
+                    />
+                  )}
                 </a>
                 <a className="modalBtn">
-                  <YouTubeIcon onClick={()=>{!videoState?setVideoState(true):setVideoState(false)}}/>
-                  {videoState && <input autoFocus type="text" value={videoURLState} onChange={handleVideo} placeholder="Enter youtube video URL"/>}
+                  <YouTubeIcon
+                    onClick={() => {
+                      !videoState ? setVideoState(true) : setVideoState(false);
+                    }}
+                  />
+                  {videoState && (
+                    <input
+                      autoFocus
+                      type="text"
+                      value={videoURLState}
+                      onChange={handleVideo}
+                      placeholder="Enter youtube video URL"
+                    />
+                  )}
                 </a>
               </div>
               <button type="submit" className="modalPostButton">
@@ -115,17 +146,33 @@ function PostComponent(props) {
         </Box>
       </Modal>
       <div className="post">
-        <img className="userPost" src="/images/user.svg" alt="" />
-        <a id="myBtn" className="postInput" onClick={()=>{handleOpen("input")}}>
+        <img className="userPost" src={profilePic} alt="" />
+        <a
+          id="myBtn"
+          className="postInput"
+          onClick={() => {
+            handleOpen("input");
+          }}
+        >
           Start a post
         </a>
       </div>
       <div className="inputButtons">
-        <button className="photoBtn" onClick={()=>{handleOpen("image")}}>
+        <button
+          className="photoBtn"
+          onClick={() => {
+            handleOpen("image");
+          }}
+        >
           <InsertPhotoIcon />
           <span>Photo</span>
         </button>
-        <button className="videoBtn" onClick={()=>{handleOpen("video")}}>
+        <button
+          className="videoBtn"
+          onClick={() => {
+            handleOpen("video");
+          }}
+        >
           <YouTubeIcon /> <span>Video</span>
         </button>
         <button className="eventBtn" onClick={handleOpen}>

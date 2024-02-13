@@ -11,23 +11,33 @@ function RightComponent() {
           <RightHeadline>Linkedin News</RightHeadline>
           <InfoIcon />
         </div>
-        <p className="paraUl">
+        <div className="paraUl">
           <ul>
-            <li><a href="/">Carelon to hire thousands</a></li>
+            <li>
+              <a href="/">Carelon to hire thousands</a>
+            </li>
           </ul>
           <ul>
-            <li><a href="/">Carelon to hire thousands</a></li>
+            <li>
+              <a href="/">Carelon to hire thousands</a>
+            </li>
           </ul>
           <ul>
-            <li><a href="/">Carelon to hire thousands</a></li>
+            <li>
+              <a href="/">Carelon to hire thousands</a>
+            </li>
           </ul>
           <ul>
-            <li><a href="/">Carelon to hire thousands</a></li>
+            <li>
+              <a href="/">Carelon to hire thousands</a>
+            </li>
           </ul>
           <ul>
-            <li><a href="/">Carelon to hire thousands</a></li>
+            <li>
+              <a href="/">Carelon to hire thousands</a>
+            </li>
           </ul>
-        </p>
+        </div>
         <button className="showMore">Show more</button>
       </div>
     </>

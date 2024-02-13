@@ -1,14 +1,25 @@
-import React from 'react'
-import Feed from './General/Feed'
-import NavList from './NavComponents/NavList'
+import React, { useEffect } from "react";
+import Feed from "./General/Feed";
+import NavList from "./NavComponents/NavList";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-    return (
-        <>
-            <NavList/>
-            <Feed/>
-        </>
+  const user = useSelector((store) => store.user.loggedIn);
+  const navigate = useNavigate();
+  useEffect(() => {
+    user === false && navigate("/");
+    //eslint-disable-next-line
+  }, []);
+
+  return (
+    user === true && (
+      <>
+        <NavList />
+        <Feed />
+      </>
     )
+  );
 }
 
-export default Home
+export default Home;
