@@ -1,13 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
+console.log(process.env.REACT_APP_STORAGE_BUCKET);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDZcMbTbbr3qyZ0Hqmz3HJ5pQALWJXoZYA",
-  authDomain: "linkedin-clone-dab2b.firebaseapp.com",
-  projectId: "linkedin-clone-dab2b",
-  storageBucket: "linkedin-clone-dab2b.appspot.com",
-  messagingSenderId: "1001950833541",
-  appId: "1:1001950833541:web:3139199ccfbecb8c0272ec",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGE_SENDING_ID,
+  appId: process.env.REACT_APP_ID,
 };
 
 // Initialize Firebase

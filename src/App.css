@@ -18,3 +18,26 @@
 button{
     cursor: pointer;
 }
+
+.loginBtn{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    background-color: #1575a7;
+    margin-bottom: 2rem;
+    @media (max-width: 468px) {
+      width: 100%;
+    }
+}
+
+.signupBtn{
+    color: #f89d44;
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+}

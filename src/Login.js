@@ -62,7 +62,6 @@ function Login() {
           <img src="/images/screenshot.png" alt="" />
         </ImageSection>
         <LoginForm>
-          <button onClick={handleClick}>SignIn with Google</button>
           <form onSubmit={handleSubmit}>
             <h1>Login</h1>
             <div className="input">
@@ -88,32 +87,31 @@ function Login() {
                 </a>
               </span>
             </div>
-            <div className="remeberCheck">
-              <span>
-                <input type="checkbox" />
-                <span>Remember Me</span>
-              </span>
-              <a href="#">Change Password</a>
-            </div>
-            <span>
-              <input type="checkbox" />
-              <p>
-                Agree to{" "}
-                <Link to="/termsandconditions">Terms & Conditions</Link>
-              </p>
-            </span>
             {loginWarning == true && (
               <LoginWarning>
                 Please check your username and password!
               </LoginWarning>
             )}
             <LoginAndRegister>
-              <button type="submit">Login</button>
-              <p>
-                Don't have an account? <Link to="/signup">Register Here</Link>{" "}
-              </p>
+              <button className="loginBtn" type="submit">
+                Login
+              </button>
             </LoginAndRegister>
           </form>
+          <LoginAndRegister>
+            <p>
+              Don't have an account?
+              <button className="signupBtn" onClick={handleClick}>
+                Register Here
+              </button>
+            </p>
+            <br />
+            <p>Or</p>
+            <br />
+            <button className="loginBtn" onClick={handleClick}>
+              SignIn with Google
+            </button>
+          </LoginAndRegister>
         </LoginForm>
       </LoginContainer>
     </>
@@ -140,6 +138,7 @@ const LoginWarning = styled.p`
   font-size: 14px;
   margin-bottom: 6px;
 `;
+
 const ImageSection = styled.div`
   width: 50%;
   margin-right: 1rem;
@@ -237,20 +236,6 @@ const LoginForm = styled.div`
 
 const LoginAndRegister = styled.div`
   text-align: center;
-  & > button {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.6rem;
-    color: white;
-    font-size: 1.2rem;
-    letter-spacing: 0.1rem;
-    background-color: #1575a7;
-    margin-bottom: 2rem;
-    @media (max-width: 468px) {
-      width: 100%;
-    }
-  }
   & > p {
     font-size: 1.2rem;
     font-weight: 600;
