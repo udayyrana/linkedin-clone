@@ -1,5 +1,5 @@
-# Project Highlight (Check the video to get understanding)
-(https://github.com/udayyrana/linkedin-clone/blob/main/Linkedin-clone.mp4)
+# Project Highlight (Check the video to get better understanding)
+(https://youtu.be/bavUUsKsXjU)
 
 # Getting Started with Create React App
 
